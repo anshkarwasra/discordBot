@@ -52,14 +52,7 @@ class InactivityManager(commands.Cog):
         # Remove inactive users' instances
         for user_id in to_remove:
             del self.last_activity[user_id]
-            print(f"Deleted instance for user {user_id} due to inactivity.")
-            warnEmbd = discord.Embed(
-                title="Inactivity for long time",
-                description=f"dear {user_id} due to your inactiviy for a long time your chat instance has been removed because we dont a NASA's pc",
-                color=discord.Color.red()
-
-            )
-            await self.bot.get_channel(self.botChannel).send(embed=warnEmbd)
+            
             # Add custom cleanup logic here if needed
 
     @cleanup_task.before_loop
